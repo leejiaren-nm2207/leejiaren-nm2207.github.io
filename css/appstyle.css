@@ -1,0 +1,80 @@
+/*body design*/
+body {
+    background-color: #342E37;
+    font-family: Baskerville, Cambria, Georgia, serif;
+    font-size: 18px;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+  }
+
+p {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+h3 {
+    font-size: 40px;
+    text-align: center;
+    padding: 200px 170px
+}
+
+/* heading */
+#heading {
+    text-align: center;
+    font-size: 100px;
+}
+/* sub-heading */
+#sub-heading {
+    text-align: center;
+    padding-left: 170px;
+    padding-right: 170px;
+
+}
+
+/* intro body */
+.introtext{
+    margin-left: 80px;
+    margin-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+ 
+.introchart{
+    margin-top: 100px;
+    padding: 100px
+}
+
+/* act 1 */
+.Act1pix{
+    background-image: url("/web/FINALPROJ/resources/act1.png");
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+
+#barInvis{
+    text-align:center; 
+    display: block;
+}
+
+#lineInvis{
+    text-align:center; 
+    /* display: none; not working as expected, need to find out how to change */
+}
+
+
+/* act 2 */
+.Act2pix{
+    background-image: url("/web/FINALPROJ/resources/act2.jpg"); 
+    /* might edit the pix slightly to fit mood */
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+/* w9submission */
+.week9submission{
+    border: 1px solid azure;
+    border-collapse: collapse;
+    padding: 5px
+}
