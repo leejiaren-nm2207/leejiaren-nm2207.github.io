@@ -48,7 +48,7 @@ h3 {
 
 /* act 1 */
 .Act1pix{
-    background-image: url(".resources/act1.png");
+    background-image: url("../resources/act1.png");
     background-attachment: fixed;  
     background-size: cover;
   }
@@ -66,7 +66,7 @@ h3 {
 
 /* act 2 */
 .Act2pix{
-    background-image: url(".resources/act2.jpg"); 
+    background-image: url("../resources/act2.jpg"); 
     /* might edit the pix slightly to fit mood */
     background-attachment: fixed;  
     background-size: cover;
