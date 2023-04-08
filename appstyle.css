@@ -1,0 +1,153 @@
+/*body design*/
+body {
+    background-color: #342E37;
+    font-family: Baskerville, Cambria, Georgia, serif;
+    font-size: 18px;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+}
+
+p {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+h3 {
+    font-size: 40px;
+    text-align: center;
+    padding: 200px 170px
+}
+
+/* heading */
+#heading {
+    text-align: center;
+    font-size: 100px;
+}
+
+/* sub-heading */
+#sub-heading {
+    text-align: center;
+    padding-left: 170px;
+    padding-right: 170px;
+
+}
+
+/* intro body */
+.introtext {
+    margin-left: 80px;
+    margin-right: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.introchart {
+    margin-top: 100px;
+    padding: 100px
+}
+
+/* act 1 */
+.Act1pix {
+    background-image: url("../resources/act1.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+
+#lineInvis {
+    align-items: center;
+	justify-content: center;
+    /* display: none; not working as expected, need to find out how to change */
+}
+
+/* rangeslider */
+@mixin rangeThumb {
+    width: 18px;
+    height: 18px;
+    margin: -8px 0 0;
+    border-radius: 50%;
+    background: #e60073 ;
+    cursor: pointer;
+    border: 0;
+}
+
+@mixin rangeTrack {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #b2b2b2 ;
+}
+
+#timeScro {
+    text-align: center;
+    width: 800px;
+    height: 5px;
+}
+
+#timeScro input {
+    width: 100%;
+    position: absolute;
+    top: 2px;
+    height: 0;
+    -webkit-appearance: none;
+
+    /* // Thumb */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; // needed again for Chrome & Safari
+        @include rangeThumb;
+    }
+
+    &::-moz-range-thumb {
+        @include rangeThumb;
+    }
+
+    &::-ms-thumb {
+        @include rangeThumb;
+    }
+
+    /* // Track */
+    &::-webkit-slider-runnable-track {
+        @include rangeTrack;
+    }
+
+    &::-moz-range-track {
+        @include rangeTrack;
+    }
+
+    &::-ms-track {
+        @include rangeTrack;
+    }
+
+    &:focus {
+        /* // override outline/background on focus */
+        background: none;
+        outline: none;
+    }
+
+    &::-ms-track {
+        /* // A little somethin' somethin' for IE */
+        width: 100%;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    },
+}
+
+
+/* act 2 */
+.Act2pix {
+    background-image: url("../resources/act2.jpg");
+    /* might edit the pix slightly to fit mood */
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* w9submission */
+.week9submission {
+    border: 1px solid azure;
+    border-collapse: collapse;
+    padding: 5px
+}

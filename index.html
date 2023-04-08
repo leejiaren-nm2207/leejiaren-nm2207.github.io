@@ -3,6 +3,7 @@
   <head>
     <title>Lee Jia Ren's NM2207 Final Project</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@2.0.0 "></script>
     <script defer type="text/javascript" src="appscripts/main.js"></script>
     <link rel="stylesheet" href="css/appstyle.css" />
   </head>
@@ -52,16 +53,27 @@
     <div class="Act1">
       <p class="Factor 1"> 
         <br> Films with proportional representation have steadily increased overtime, [insert more text] 
-        <br style="text-align:center";><canvas id="proprep" width="500" height="500"></canvas>
+        <div class="Factor 1 Chart" style="text-align:center; position: relative; height: 500px; width:90%">
+          <canvas id="proprep"></canvas>
+        </div>
+        <br style="text-align:center";><label for="scroller";>See the changes over time</label>
+        <br><input type="range" id="timeScro" min="2007" max="2019" value="2007" ><!--onchange="updateStep(this.value)" oninput="updateStep(this.value)" : see if can change to event listeners in js-->
+
       </p>
       <p class="Factor 2">
         <br> What about films that do not include Asian representation at all? For the longest time, API characters were barely seen on-screen, giving rise to the epidemic of invisibility. However, we are definitely seeing this less and less as years pass. Click on the buttons to see the change. 
         <form>
-          <label for="chart-change">Click to toggle between charts</label>
-          <button type="button" id="bad">Proportion of films missing API characters out of 1300 movies from 2007-2019</button>
-          <button type="button" id="good">Change in number of films missing API characters out of 1300 movies from 2007-2019</button>
-          <div id ="barInvis"><canvas id="invisibilitybad" width="400" height="200"></canvas></div> 
-          <div id ="lineInvis"><canvas id="invisibilitygood" width="400" height="400"></canvas></div>
+          <label for="chart-change">Progress in number of films missing API characters out of 1300 movies from 2007-2019. Click on each button to filter across API </label>
+          <div class='buttons'>
+            <button type="button" id="tt">Total</button>
+            <button type="button" id="api">API</button>
+            <button type="button" id="asi">Asian</button>
+            <button type="button" id="nhp">NHPI</button>
+          </div>
+          <div class="Invis-Chart" style="text-align:center; position: relative; height: 500px; width:90%">
+            <canvas id="lineInvis"></canvas>
+          </div>
+          
         </form>
         
       </p>
@@ -126,7 +138,86 @@
 
       </table>
       <p><a href="https://docs.google.com/document/d/1UqVcck2RY4USzZTlS52m0n54dxXCUUjxWTmeRCQvbeA/edit?usp=sharing">Diary Entry W10</a></p>
-     <p><a href="https://docs.google.com/document/d/1fx1-WcLYDi9M-rM4Giu9lQWH0pVONWhQk9DvziHUIk4/edit?usp=sharing">Diary Entry W11</a></p>
+      <p><a href="https://docs.google.com/document/d/1fx1-WcLYDi9M-rM4Giu9lQWH0pVONWhQk9DvziHUIk4/edit?usp=sharing">Diary Entry W10</a></p>
+    </div>
+
+  </body>
+</html>
+      </p>
+      <p class="Factor 2">
+        <br> What about films that do not include Asian representation at all? For the longest time, API characters were barely seen on-screen, giving rise to the epidemic of invisibility. However, we are definitely seeing this less and less as years pass. Click on the buttons to see the change. 
+        <form>
+          <label for="chart-change">Click to toggle between charts</label>
+          <button type="button" id="bad">Proportion of films missing API characters out of 1300 movies from 2007-2019</button>
+          <button type="button" id="good">Change in number of films missing API characters out of 1300 movies from 2007-2019</button>
+          <div id ="barInvis"><canvas id="invisibilitybad" width="400" height="200"></canvas></div> 
+          <div id ="lineInvis"><canvas id="invisibilitygood" width="400" height="400"></canvas></div>
+        </form>
+        
+      </p>
+    </div>
+  
+    <div class="Act2pix">
+      <h3>Act 2: Progress, but at what cost?</h3>
+    </div>
+
+    <div class="Act2">
+      <p>However, simple trends can be deceiving. might insert summary about points to be made: diversity within asian representation and common stereotypes
+      <p class="leads"> 
+        <!-- pic is a sample, will be replaced with an image of the ratio of white to API actors  -->
+        <br> <img src="https://www.inclusionlist.org/artboards/desktop/race/BestLeadActress.svg"> 
+        <br> While their popularity have been on the rise, it is undeniable that the pool of API actors remains sparse. Not only were there significantly rare as compared to white actors, they were also largely represented by a select few stars. [insert elaboration] 
+        <br style="text-align:center";><canvas id="type-of-actors" width="500" height="250"></canvas>
+      </p>
+      <p class = "ethnic">
+        <br>Furthermore, API communities are not equally represented...Being Asian American isnt a monolithic experience. Rather, Asia is a melting pot of diverse cultures and identiies, so grouping them together often makes for troubling depictions. Currently, a bulk of representation come from East Asia. For instance, talk about the ethnic heritage representation in film "Crazy Rich Asians".
+        <br style="text-align:center";><canvas id="ethnicdiv" width="500" height="500"></canvas>
+
+      <p class="stereotype">
+        <br>Sometimes, mere representation can be even harmful, when they tend to reinforce stereotypes…
+        <br style="text-align:center";><canvas id="stereo" width="500" height="500"></canvas>
+      </p>
+      <div class="spotlight">
+        <br>a look at the most significant, prevalent stereotypes
+        <!-- havent decided how to display this, but the main stereotypes to look at is model minority, the asexual man, the hypersexual female -->
+      </div>
+    </div>
+
+    <div class="Act3pix">
+      <h3>Act 3: Change is coming</h3>
+      <!-- insert text about new characters (especially on tv) that are beginning to give us fully human chatracters with nuances that are vital. so all is not lost. Some include  -->
+    </div>
+
+    <div class="Act 3">
+      <p>Diary Entry W9</p>
+      <table class="week9submission">
+        <tr class="week9submission">
+          <th class="week9submission">Background</th>
+          <th class="week9submission">Data</th>
+          <th class="week9submission">Problem Statement</th>
+          <th class="week9submission">Concept Doc</th>
+        </tr>
+        <tr class="week9submission">
+          <td class="week9submission">
+            (the entire of the intro is the bg) In a notable moment that will be remembered for years to come, the movie “Everything, Everywhere, All at Once” swept seven accolades at the Oscars this year. Historically, Asians have been underrepresented in the prestigious Academy Awards. In its 95 years of existence, only 229 nominees and 50 winners were identified as Asian. That`s 2 percent of all nominees and winners.
+            2023 accounted for the highest number of Asian nominees and winner. Eleven or more than half of the nominees this year were associated with the film “Everything, Everywhere, All at Once”. 
+            While celebration is in due, their achievements also reveal speaks volumes of the historical barriers Asians have been facing.
+          </td>
+          <td class="week9submission">
+            <a href="https://docs.google.com/document/d/1cQzkFhanJIgNxeTUeJxyhkceCZJ0AKI8-QLZcqU98k0/edit?usp=sharing">DATA SOURCE</a>
+          </td>
+          <td class="week9submission">
+            To what extent has Asian-american portrayal in mainstream cinema progressed over the years? 
+          </td>
+          <td class="week9submission"> 
+            <a href="https://docs.google.com/document/d/1MWe0WRxcSRrT_zb3MnpCQuxWzV7aCpwsKG_8z1WhLwQ/edit?usp=sharing">CONCEPT DOC</a>
+          </td>
+        </tr>
+
+      </table>
+      <p><a href="https://docs.google.com/document/d/1UqVcck2RY4USzZTlS52m0n54dxXCUUjxWTmeRCQvbeA/edit?usp=sharing">Diary Entry W10</a></p>
+      <p><a href="https://docs.google.com/document/d/1fx1-WcLYDi9M-rM4Giu9lQWH0pVONWhQk9DvziHUIk4/edit?usp=sharing">Diary Entry W11</a></p>
+      <p><a href="https://docs.google.com/document/d/14H71DW-f5Iubk4fZbij56KQVf9l6woVqDsZzw90zYhI/edit?usp=sharing">Diary Entry W12</a></p>
     </div>
 
   </body>
