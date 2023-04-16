@@ -1,29 +1,57 @@
 /*body design*/
 body {
-    background-color: #342E37;
-    font-family: Baskerville, Cambria, Georgia, serif;
-    font-size: 18px;
-    color: white;
+    background-color: ivory;
+    background-image: url("../resources/COVER.webp");
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: Baskerville, Cambria, Georgia, Palatino, Alegreya, serif;
+    font-size: 24px;
+    color: black;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 40px;
 }
-
+body::before{
+    content: "";
+    background-image: url("../resources/COVER.webp");
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.75;
+}
 p {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 50pxs;
+    line-height: 1.6;
+    align: justify-content;
 }
 
 h3 {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     padding: 200px 170px
 }
+/* header picture */
 
+.header {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    margin-top: 0;
+    margin: 200px;
+    text-align: center;
+    background-color: #342E37;
+    color: azure;
+
+}
 /* heading */
 #heading {
     text-align: center;
-    font-size: 100px;
+    font-size: 80px;
+    padding-top: 70px
 }
 
 /* sub-heading */
@@ -31,7 +59,6 @@ h3 {
     text-align: center;
     padding-left: 170px;
     padding-right: 170px;
-
 }
 
 /* intro body */
@@ -47,99 +74,124 @@ h3 {
     padding: 100px
 }
 
+.Intro{
+    align: justify-content;
+}
+#oscars {
+    border-radius: 5%;
+    object-fit: cover;
+    width: 500px;
+    height: 400px;
+}
 /* act 1 */
 .Act1pix {
     background-image: url("../resources/act1.png");
     background-attachment: fixed;
     background-size: cover;
+    margin-top: 50px;
+    color: azure
 }
 
-
+.Factor1Chart {
+    position: relative;
+    
+}
+ /* #barchart {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    top: 0px;
+    z-index: 90;
+    padding-left: 100px;
+    } */
+/*     
+.step {
+    margin-bottom: 200px;
+    }
+     */
+/* #card-type {
+    display: inline-block;
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+    margin-left: 0;
+    left: 150px;
+    height: 600px;
+    width: 300px;
+    background-color: #ddd;
+    }  */
 
 #lineInvis {
     align-items: center;
 	justify-content: center;
+    display: inline-block;
     /* display: none; not working as expected, need to find out how to change */
 }
 
 /* rangeslider */
-@mixin rangeThumb {
-    width: 18px;
-    height: 18px;
-    margin: -8px 0 0;
-    border-radius: 50%;
-    background: #e60073 ;
-    cursor: pointer;
-    border: 0;
-}
 
-@mixin rangeTrack {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: #b2b2b2 ;
-}
 
 #timeScro {
     text-align: center;
-    width: 800px;
-    height: 5px;
-}
-
-#timeScro input {
     width: 100%;
-    position: absolute;
-    top: 2px;
-    height: 0;
-    -webkit-appearance: none;
+    height: 5px;
 
-    /* // Thumb */
-    &::-webkit-slider-thumb {
-        -webkit-appearance: none; // needed again for Chrome & Safari
-        @include rangeThumb;
-    }
+}
 
-    &::-moz-range-thumb {
-        @include rangeThumb;
-    }
-
-    &::-ms-thumb {
-        @include rangeThumb;
-    }
-
-    /* // Track */
-    &::-webkit-slider-runnable-track {
-        @include rangeTrack;
-    }
-
-    &::-moz-range-track {
-        @include rangeTrack;
-    }
-
-    &::-ms-track {
-        @include rangeTrack;
-    }
-
-    &:focus {
-        /* // override outline/background on focus */
-        background: none;
-        outline: none;
-    }
-
-    &::-ms-track {
-        /* // A little somethin' somethin' for IE */
-        width: 100%;
-        cursor: pointer;
-        background: transparent;
-        border-color: transparent;
-        color: transparent;
-    },
+/* button */
+#tt{
+    background-color: #9b2226; 
+    border: solid black;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 50px;
+}
+#api{
+    background-color: #bb3e03; 
+    border: solid black;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 
+#asi{    
+    background-color: #ca6702; 
+    border: solid black;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#nhp{
+    background-color: #ee9b00; 
+    border: solid black;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.pix{
+    width: 100px;
+    height: auto;
+    /* object-fit: cover; */
+}
 /* act 2 */
 .Act2pix {
-    background-image: url("../resources/act2.jpg");
+    background-image: url("../resources/act22.webp");
     /* might edit the pix slightly to fit mood */
     background-attachment: fixed;
     background-size: cover;
@@ -150,4 +202,73 @@ h3 {
     border: 1px solid azure;
     border-collapse: collapse;
     padding: 5px
+}
+
+#barchart {
+    display: inline-block;
+    position: relative;
+    height: auto;
+    width: 45%;
+    background-color: "transparent";
+}
+/* tried to make the image fade in but din really work... */
+/* .card-type {
+    display: inline-block;
+    position: relative;
+    height: 600px;
+    width: 50%;
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: ivory;
+    text-align: center;
+    color: black
+    
+}
+.card-type img {
+    animation: fadeIn 5s; 
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  } */
+
+
+#typecards{
+    height: 600px;
+    width: auto;
+    image-rendering: pixelated;
+}
+
+.Act3pix{
+    background-image: url("../resources/act3.webp");
+    /* might edit the pix slightly to fit mood */
+    background-attachment: fixed;
+    background-size: cover;
+    color: ivory
 }
