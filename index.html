@@ -2,21 +2,37 @@
 <html lang="en">
   <head>
     <title>Lee Jia Ren's NM2207 Final Project</title>
+    <!-- for tooltips  -->
+    
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-deferred@2.0.0 "></script>
+
+    <!-- from mapEvent -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+
     <script defer type="text/javascript" src="appscripts/main.js"></script>
+    
     <link rel="stylesheet" href="css/appstyle.css" />
   </head>
   <body>
-    <h1 id="heading">Final Project Title</h1>
-    <h2 id="sub-heading">In a notable moment that will be remembered for years to come, the movie “Everything, Everywhere, All at Once” swept seven accolades at the Oscars this year. Historically, Asians have been underrepresented in the prestigious Academy Awards. 
-    </h2>
+    <div class="header">
+      <h1 id="heading">The Asian-American Journey On Screen</h1>
+      <p>By Lee Jia Ren
+      <br>15 March, 2023</p>
+      <br>
+      <h3 id="sub-heading">In a notable moment that will be remembered for years to come, the movie “Everything, Everywhere, All at Once” swept seven accolades at the Oscars this year. Historically, Asians have been underrepresented in the prestigious Academy Awards. 
+      </h3>
+
+    </div>
+
 
     <div class="Intro">
         <table>
             <tr>
                 <td class="introchart"><canvas id="asian-total-chart" width="500" height="500"></canvas></td>
-                <td class="introtext">Across its 95 years of existence, only 229 nominations and 54 wins were identified as Asian. That`s 2 percent of all nominees and winners.</td>
+                <td class="introtext">Across its 95 years of existence, only 229 nominations and 54 wins were identified as Asian. That`s <mark>2 percent</mark> of all nominees and winners.</td>
             </tr>
         </table>
     </div>
@@ -24,24 +40,16 @@
     <div class="Intro">
       <table>
         <tr>
-            <td class="introchart"><canvas id="asian-2023-chart" width="500" height="500"></canvas></td>
-            <td class="introtext">2023 accounted for the highest number of Asian nominees and winner. 20 nominations or 9% of all Asian nominees and 7 wins or 13% of all Asian winners were named in 2023</td>
+            <td class="introchart"><img id="oscars" src="./resources/OSCARS_Everything.jpg"></td>
+            <td class="introtext">2023 accounted for the highest number of Asian nominees and winners, with eleven or more than half of the nominees this year were associated with the film “Everything, Everywhere, All at Once”.</td>
         </tr>
       </table>
     </div>
 
     <div class="Intro">
-      <table>
-        <tr>
-            <td class="introchart"><canvas id="asian-everything-chart" width="500" height="500"></canvas></td>
-            <td class="introtext">Eleven or more than half of the nominees this year were associated with the film “Everything, Everywhere, All at Once”. </td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="Intro">
-      <p>While celebration is in due, their achievements also reveal speaks volumes of the historical barriers Asians have been facing. This article therefore seeks to answer: </p>
-      <p style = "font-size:40px";><i>To what extent has Asian-american portrayal in mainstream media progressed over the years? </i></p>
+      <p>And while celebration is in due, their achievements also reveal speaks volumes of the historical barriers Asians have been facing. Asian-American talents definitely did not sprout overnight, so their sucess of today paints a story of a long-held prejudice stewing that's only just been uncovered.
+        <br><br> Discrimination within the film industry is also steeped into society. In recent years, the rise of Asian Hate in the United States continues to signal an ever-increasing need to highlight the losses among seeming progress. This article therefore seeks to answer: </p>
+      <div style = "font-size:40px";><i><mark>To what extent has Asian-american portrayal in mainstream media progressed over the years? </i></mark></div>
     </div>
 
     <div class="Act1pix">
@@ -52,25 +60,26 @@
 
     <div class="Act1">
       <p class="Factor 1"> 
-        <br> Films with proportional representation have steadily increased overtime, [insert more text] 
-        <div class="Factor 1 Chart" style="text-align:center; position: relative; height: 500px; width:90%">
+        <br> Films with proportional representation of Asian-Americans have steadily increased overtime. There is indication of films the include Asian characters in the cast, allowing for a slow but steady rise in proportional representaion over time.
+        <br><br><br style="text-align:center";><label for="scroller";><b>Swipe the scroller to see the changes over time and take a look yourself!</b></label>
+        <br><br><div class="Factor1Chart" style="text-align:center; position: relative; height: auto; width:100%">
           <canvas id="proprep"></canvas>
         </div>
-        <br style="text-align:center";><label for="scroller";>See the changes over time</label>
+
         <br><input type="range" id="timeScro" min="2007" max="2019" value="2007" ><!--onchange="updateStep(this.value)" oninput="updateStep(this.value)" : see if can change to event listeners in js-->
 
       </p>
       <p class="Factor 2">
-        <br> What about films that do not include Asian representation at all? For the longest time, API characters were barely seen on-screen, giving rise to the epidemic of invisibility. However, we are definitely seeing this less and less as years pass. Click on the buttons to see the change. 
-        <form>
-          <label for="chart-change">Progress in number of films missing API characters out of 1300 movies from 2007-2019. Click on each button to filter across API </label>
+        <br> What about films that do not include Asian representation at all? For the longest time, API characters were barely seen on-screen, giving rise to the epidemic of invisibility. However, we are definitely seeing this less and less as years pass. 
+        <br<br><form>
+          <label for="chart-change"><b>Progress in number of films missing API characters out of 1300 movies from 2007-2019. Click on each button to filter and compare!</b></label>
           <div class='buttons'>
             <button type="button" id="tt">Total</button>
             <button type="button" id="api">API</button>
             <button type="button" id="asi">Asian</button>
             <button type="button" id="nhp">NHPI</button>
           </div>
-          <div class="Invis-Chart" style="text-align:center; position: relative; height: 500px; width:90%">
+          <div class="Invis-Chart" style="text-align:center; position: relative; height: auto; width: 100%">
             <canvas id="lineInvis"></canvas>
           </div>
           
@@ -84,111 +93,50 @@
     </div>
 
     <div class="Act2">
-      <p>However, simple trends can be deceiving. might insert summary about points to be made: diversity within asian representation and common stereotypes
+      <p>However, simple trends can be deceiving. A closer look reveals that the increased representation belies little understanding of nuances in asian-american communities.
       <p class="leads"> 
-        <!-- pic is a sample, will be replaced with an image of the ratio of white to API actors  -->
-        <br> <img src="https://www.inclusionlist.org/artboards/desktop/race/BestLeadActress.svg"> 
-        <br> While their popularity have been on the rise, it is undeniable that the pool of API actors remains sparse. Not only were there significantly rare as compared to white actors, they were also largely represented by a select few stars. [insert elaboration] 
-        <br style="text-align:center";><canvas id="type-of-actors" width="500" height="500"></canvas>
-      </p>
-      <p class = "ethnic">
-        <br>Furthermore, API communities are not equally represented...Being Asian American isnt a monolithic experience. Rather, Asia is a melting pot of diverse cultures and identiies, so grouping them together often makes for troubling depictions. Currently, a bulk of representation come from East Asia. For instance, talk about the ethnic heritage representation in film "Crazy Rich Asians".
-        <br style="text-align:center";><canvas id="ethnicdiv" width="500" height="500"></canvas>
+        <br> Throughout the years, there have been a substantial increase in number of films with API as leads. Amongs 1300 top grossing movies, there was a good 7 films in 2019 that was helmed by API leads. At the same time, while their popularity have been on the rise, it may not be surprising to know that the pool of API actors remains sparse. Not only were there significantly rare as compared to white actors, they were also largely represented by a select few stars. For instance, 14 our of the 44 films with API Leads/Co-leads was led by Dwayne Johnson. 
+        <p><b>Click each individual actors to see how many films they have been stars of!</b><table>
+          <tr>
+              <td class="pic"><img class="pix" src = "resources/3.png"></td>
+              <td class="pic"><img class="pix" src = "resources/4.png"></td>
+              <td class="pic"><img class="pix" src = "resources/5.png"></td>
+          </tr>
+          <tr>
+            <td class="pic" style="text-align: center";>Dwayne Johnson</td>
+            <td class="pic"style="text-align: center";>Keanu Reeves</td>
+            <td class="pic"style="text-align: center";>John Cho</td>
+        </tr></table></p>
 
+      </table><div id = "type-of-actors";></div>
+      <!-- <p class = "ethnic">
+        <br>Furthermore, API communities are not equally represented...Being Asian American isnt a monolithic experience. Rather, Asia is a melting pot of diverse cultures and identiies, so grouping them together often makes for troubling depictions. Currently, a bulk of representation come from East Asia. For instance, talk about the ethnic heritage representation in film "Crazy Rich Asians".
+        <br style="text-align:center";><canvas id="ethnicdiv" width="500" height="500"></canvas> -->
+        <p> This is significant, because with the absymal lack of leading roles, there is significantly less opportunities to explore nuances in charatcer portrayal. This is perhaps most obvious in the variety of stereotypes that have been crippling Asian-American characters for decades.</p>
       <p class="stereotype">
-        <br>Sometimes, mere representation can be even harmful, when they tend to reinforce stereotypes…
-        <br style="text-align:center";><canvas id="stereo" width="500" height="500"></canvas>
+        <br>Sometimes, mere representation can be even harmful, as they tend to reinforce stereotypes. Here's a snapshot of some of the most prevailing stereotypes of Asian-American on screen and their on-going prevalence. You may hover over the bars and find out what each of the stereotypes mean. 
+        <div id='barchart'>
+          <canvas id="stereo" width="50%" height="400"></canvas>
+        </div>
+        <div class="card-type">
+          <img id = "typecards" src="./resources/orig.png" alt="">
+        </div>
       </p>
-      <div class="spotlight">
-        <br>a look at the most significant, prevalent stereotypes
-        <!-- havent decided how to display this, but the main stereotypes to look at is model minority, the asexual man, the hypersexual female -->
-      </div>
+
+      <br>Through the most prevalent stereotypes of "Model Minority" seeming positive, these stereotypes are ultimately reductive and serve to obscure the real discrimination faced by Asian-Americans. 
     </div>
 
     <div class="Act3pix">
       <h3>Act 3: Change is coming</h3>
-      <!-- insert text about new characters (especially on tv) that are beginning to give us fully human chatracters with nuances that are vital. so all is not lost. Some include  -->
+    </div>
+    <div>
+      <p>However, is that to say flawed representation not representation at all? It is perhaps important to note that the increasing trend of Asian-American representation on-screen, no matter how inaccurate, have paved the way for so many other actors and characters today. 
+      <br><br>Asian actors are increaisngly getting to play more fully-human characters, and these characters continue to build upon some of the prevalent streotypes, but giving nuances that are vital to appropriate character portrayal. Take the increasingly popular film "To All the Boys I've Loved Before", which showcases Asian lead Lara-Jean as a typical protagonist exploring sex, love and relationships in her youth. 
+      <br><br>While this article mainly covers top-grossing films, future studies can explore representaton on television, and consider specifcially covering Asians, as the diversities between NHPI and Asian communities are so vast it should. </p>
     </div>
 
     <div class="Act 3">
-      <p>Diary Entry W9</p>
-      <table class="week9submission">
-        <tr class="week9submission">
-          <th class="week9submission">Background</th>
-          <th class="week9submission">Data</th>
-          <th class="week9submission">Problem Statement</th>
-          <th class="week9submission">Concept Doc</th>
-        </tr>
-        <tr class="week9submission">
-          <td class="week9submission">
-            (the entire of the intro is the bg) In a notable moment that will be remembered for years to come, the movie “Everything, Everywhere, All at Once” swept seven accolades at the Oscars this year. Historically, Asians have been underrepresented in the prestigious Academy Awards. In its 95 years of existence, only 229 nominees and 50 winners were identified as Asian. That`s 2 percent of all nominees and winners.
-            2023 accounted for the highest number of Asian nominees and winner. Eleven or more than half of the nominees this year were associated with the film “Everything, Everywhere, All at Once”. 
-            While celebration is in due, their achievements also reveal speaks volumes of the historical barriers Asians have been facing.
-          </td>
-          <td class="week9submission">
-            <a href="https://docs.google.com/document/d/1cQzkFhanJIgNxeTUeJxyhkceCZJ0AKI8-QLZcqU98k0/edit?usp=sharing">DATA SOURCE</a>
-          </td>
-          <td class="week9submission">
-            To what extent has Asian-american portrayal in mainstream cinema progressed over the years? 
-          </td>
-          <td class="week9submission"> 
-            <a href="https://docs.google.com/document/d/1MWe0WRxcSRrT_zb3MnpCQuxWzV7aCpwsKG_8z1WhLwQ/edit?usp=sharing">CONCEPT DOC</a>
-          </td>
-        </tr>
-
-      </table>
-      <p><a href="https://docs.google.com/document/d/1UqVcck2RY4USzZTlS52m0n54dxXCUUjxWTmeRCQvbeA/edit?usp=sharing">Diary Entry W10</a></p>
-      <p><a href="https://docs.google.com/document/d/1fx1-WcLYDi9M-rM4Giu9lQWH0pVONWhQk9DvziHUIk4/edit?usp=sharing">Diary Entry W10</a></p>
-    </div>
-
-  </body>
-</html>
-      </p>
-      <p class="Factor 2">
-        <br> What about films that do not include Asian representation at all? For the longest time, API characters were barely seen on-screen, giving rise to the epidemic of invisibility. However, we are definitely seeing this less and less as years pass. Click on the buttons to see the change. 
-        <form>
-          <label for="chart-change">Click to toggle between charts</label>
-          <button type="button" id="bad">Proportion of films missing API characters out of 1300 movies from 2007-2019</button>
-          <button type="button" id="good">Change in number of films missing API characters out of 1300 movies from 2007-2019</button>
-          <div id ="barInvis"><canvas id="invisibilitybad" width="400" height="200"></canvas></div> 
-          <div id ="lineInvis"><canvas id="invisibilitygood" width="400" height="400"></canvas></div>
-        </form>
-        
-      </p>
-    </div>
-  
-    <div class="Act2pix">
-      <h3>Act 2: Progress, but at what cost?</h3>
-    </div>
-
-    <div class="Act2">
-      <p>However, simple trends can be deceiving. might insert summary about points to be made: diversity within asian representation and common stereotypes
-      <p class="leads"> 
-        <!-- pic is a sample, will be replaced with an image of the ratio of white to API actors  -->
-        <br> <img src="https://www.inclusionlist.org/artboards/desktop/race/BestLeadActress.svg"> 
-        <br> While their popularity have been on the rise, it is undeniable that the pool of API actors remains sparse. Not only were there significantly rare as compared to white actors, they were also largely represented by a select few stars. [insert elaboration] 
-        <br style="text-align:center";><canvas id="type-of-actors" width="500" height="250"></canvas>
-      </p>
-      <p class = "ethnic">
-        <br>Furthermore, API communities are not equally represented...Being Asian American isnt a monolithic experience. Rather, Asia is a melting pot of diverse cultures and identiies, so grouping them together often makes for troubling depictions. Currently, a bulk of representation come from East Asia. For instance, talk about the ethnic heritage representation in film "Crazy Rich Asians".
-        <br style="text-align:center";><canvas id="ethnicdiv" width="500" height="500"></canvas>
-
-      <p class="stereotype">
-        <br>Sometimes, mere representation can be even harmful, when they tend to reinforce stereotypes…
-        <br style="text-align:center";><canvas id="stereo" width="500" height="500"></canvas>
-      </p>
-      <div class="spotlight">
-        <br>a look at the most significant, prevalent stereotypes
-        <!-- havent decided how to display this, but the main stereotypes to look at is model minority, the asexual man, the hypersexual female -->
-      </div>
-    </div>
-
-    <div class="Act3pix">
-      <h3>Act 3: Change is coming</h3>
-      <!-- insert text about new characters (especially on tv) that are beginning to give us fully human chatracters with nuances that are vital. so all is not lost. Some include  -->
-    </div>
-
-    <div class="Act 3">
+      <h3>Diary Entries</h3>
       <p>Diary Entry W9</p>
       <table class="week9submission">
         <tr class="week9submission">
@@ -222,3 +170,4 @@
 
   </body>
 </html>
+
